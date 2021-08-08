@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StoriesController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +19,11 @@ Route::get('/', function () {
 });
 
 Route::get('/hists', [StoriesController::class, "getStories"]);
-Route::get('/hists/write', [StoriesController::class, "writeStory"]);
 Route::post('/hists/post', [StoriesController::class, "postStory"]);
-
 Route::get('/hists/{story}', [StoriesController::class, "getStory"]);
+
+Route::get('/write', [StoriesController::class, "writeStory"]);
+Route::get('/login', [LoginController::class, "loginPage"]);
+Route::get('/register', [LoginController::class, "registerPage"]);
+Route::post('/login', [LoginController::class, "checkLogin"]);
+Route::post('/register', [LoginController::class, "checkRegister"]);

@@ -7,10 +7,16 @@
     <title>Stories</title>
 </head>
 <body>
-    <header>
-        <a href="/hists/write">
+    <header> 
+        <a href="../write">
             <button>Escrever</button>
         </a>
+        <a href="/login">
+            <button>Entrar</button>
+        </a>
+        @auth
+            {{Auth::user()->name}}
+        @endauth
     </header>
     <div class="container">
         @yield("st")
