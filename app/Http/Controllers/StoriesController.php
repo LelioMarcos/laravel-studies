@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Story;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class StoriesController extends Controller
 {
@@ -21,7 +22,7 @@ class StoriesController extends Controller
     public function postStory(Request $request)
     {
         $story = Story::create([
-            'user_id' => 10,
+            'user_id' => Auth::user()->id,
             'title' => $request->title,
             'content' => $request->content
         ]);
