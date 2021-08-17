@@ -27,11 +27,17 @@ class StoriesController extends Controller
             'content' => $request->content
         ]);
 
-        return redirect('hists/'.$story->id);
+        return redirect(route("story", ['story' => $story->id]));
     }
 
     public function getStory(Story $story)
     {
         return view('storie', ['story' => $story]);
+    }
+
+    public function deleteStory(Story $story)
+    {
+        $story->delete();
+        return redirect(route("main"));
     }
 }

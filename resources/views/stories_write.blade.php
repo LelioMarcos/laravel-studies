@@ -1,7 +1,7 @@
-@extends('template.story')
+@extends('template.all')
 
 @section('st')
-    <form action="/hists/post" method="POST">
+    <form action="/story" method="POST">
         @csrf
         <input type="text" name="title"/><br>
         <textarea name="content" rows="10" cols="50"></textarea><br>
@@ -10,5 +10,5 @@
 @endsection
 
 @section('exit')
-    <p><b><a href="../hists">Back to HOME</a></b></p>
+    <p><b><a href="{{route('main')}}">Back to HOME</a></b></p>
 @endsection

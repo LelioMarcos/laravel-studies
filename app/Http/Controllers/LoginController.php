@@ -30,7 +30,7 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
         
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('hists')->withSuccess('Signed in');
+            return redirect()->route('main')->withSuccess('Signed in');
         }
   
         return redirect("login")->withErrors(['error' => "não encontrado"]);
