@@ -3,7 +3,7 @@
 @section('st')
     <h2>{{$user->name}}</h2>
     <img src="{{$user->icon}}" alt="Imagem de {{$user->name}}" width="200" height="200">
-
+    <br>
     @auth
     @if(Auth::user()->id == $user->id)
             <button>Editar</button>
