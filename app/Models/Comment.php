@@ -5,26 +5,26 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Story;
 use App\Models\User;
-use App\Models\Comment;
 
-class Story extends Model
+class Comment extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
-        'title',
-        'content',
+        'corpo',
+        'idUser',
+        'idHist',
     ];
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, "idUser");
     }
 
-    public function comments()
+    public function story()
     {
-        return $this->hasMany(Comment::class, "idHist");
+        return $this->belongsTo(Story::class, "idHsit");
     }
 }

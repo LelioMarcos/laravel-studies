@@ -16,6 +16,16 @@
             </form>
         @endif
     @endauth
+
+    <h2> Comment Section </h2>
+
+    @foreach ($story->comments as $comment)
+        <div class="comment">
+            <p>{{$comment->corpo}}</p>
+            <a href="/user/{{$comment->user->id}}">{{$comment->user->name}}</a>
+        </div>
+    @endforeach
+    
 @endsection
 
 @section('exit')

@@ -12,6 +12,12 @@
             left: 0;
             width:100%; 
         }
+
+        .comment {
+            background-color: gray;
+            border-radius: 10px;
+            padding: 5px;
+        }
     </style>
 </head>
 <body>
